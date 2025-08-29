@@ -1,9 +1,10 @@
 # FrapiRest
 
-A ready-to-run mock API built with **ASP.NET Core**, designed for frontend developers to practice without setting up a backend.  
-**Offline. Simple. Fast.**
+A ready-to-use mock API built with **ASP.NET Core**, designed for frontend developers to practice integrations without setting up a backend.
+**Offline. Lightweight. Fast.**
 
-Ideal for those using React, Angular, Flutter, Blazor, etc.
+Ideal for those working with React, Angular, Vue, Flutter, Blazor, and other frontend technologies.
+
 
 ---
 
@@ -81,7 +82,7 @@ To install Frapi, just clone it:
 ### On Linux / macOS
 
 ```bash
-sudo git clone https://github.com/Adyllsxn/frapi.git
+sudo git clone https://github.com/Adyllsxn/frapi-rest.git
 
 cd frapi
 dotnet run
@@ -90,7 +91,7 @@ dotnet run
 ### On Windows
 
 ```bash
-git clone https://github.com/Adyllsxn/frapi.git
+git clone https://github.com/Adyllsxn/frapi-rest.git
 
 cd frapi
 dotnet run

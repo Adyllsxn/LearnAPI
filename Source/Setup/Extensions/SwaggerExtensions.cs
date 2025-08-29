@@ -7,9 +7,9 @@ public static class SwaggerExtensions
             c =>
                 {
                     c.SwaggerDoc("v1", new OpenApiInfo{
-                        Title = "Frapi",
+                        Title = "Frapi Rest",
                         Version = "v1",
-                        Description = "A ready-to-run mock REST API built with ASP.NET Core. Designed for frontend developers to practice CRUD operations without setting up a backend. Offline, lightweight, and fast. Perfect for testing and learning frontend integrations. "
+                        Description = "A ready-to-run mock REST API built with ASP.NET Core. Designed for frontend developers to practice CRUD operations without setting up a backend. Offline, lightweight, and fast. Perfect for testing and learning frontend integrations."
                     });
                 }
         );
@@ -22,7 +22,7 @@ public static class SwaggerExtensions
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Frapi v1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Frapi Rest v1");
                     c.ConfigObject.AdditionalItems["locale"] = "en";
                 });
             }
