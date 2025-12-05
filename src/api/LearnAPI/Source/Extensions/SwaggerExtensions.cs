@@ -36,15 +36,12 @@ public static class SwaggerExtensions
 
     public static void UseSwaggerExtensions(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "LearnAPI v1");
-                c.DocumentTitle = "LearnAPI - API Documentation";
-                c.RoutePrefix = string.Empty;
-            });
-        }
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "LearnAPI v1");
+            c.DocumentTitle = "LearnAPI - API Documentation";
+            c.RoutePrefix = string.Empty;
+        });
     }
 }
