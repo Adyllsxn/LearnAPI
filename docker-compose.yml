@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  learnapi:
+    container_name: learnapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: learnapi:latest
+    ports:
+      - "5047:8080"
