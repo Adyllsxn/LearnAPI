@@ -14,22 +14,15 @@ public static class SwaggerExtensions
 **Technologies:** .NET 10, Entity Framework Core (InMemory), Minimal API, Swagger/OpenAPI
 
 ### 🏗️ **Main Domains**
-- **User Management:** Full CRUD for users with domain validations
-- **Learning System:** Endpoints for studying and practicing clean architecture
-- **Documentation:** Enriched Swagger for learning and presentation
+- **User Management:** Full CRUD operations with domain-driven validations
+- **Learning System:** Endpoints designed to practice clean architecture and modern backend patterns
+- **Documentation:** Enriched Swagger setup for clarity, learning, and professional presentation
 
-
-### 🌐 **Available Endpoints**
-
-#### 🔎 Read
-- **GET** → `http://localhost:5047/api/users` → List all users  
-- **GET** → `http://localhost:5047/api/users/{id}` → Get user by ID  
-- **GET** → `http://localhost:5047/api/users/search?name={name}` → Search users by first name  
-
-#### ✍️ Write
-- **POST** → `http://localhost:5047/api/users` → Create a new user  
-- **PUT** → `http://localhost:5047/api/users` → Update an existing user  
-- **DELETE** → `http://localhost:5047/api/users/{id}` → Delete user by ID"
+### ✨ **Key Features**
+- Modular and scalable architecture
+- InMemory database for fast testing and prototyping
+- Clear separation of concerns following clean architecture principles
+- Interactive Swagger UI for exploring and testing endpoints"
             });
         });
     }
