@@ -34,8 +34,12 @@ The goal is to practice **clean architecture**, explore modern backend patterns,
 
 ## 🌐 Access URLs
 
-- **Frontend (Client UI):** `http://localhost:5173`  
+### 🔹 Local
 - **API (Swagger for Developers):** `http://localhost:5047`  
+
+### 🔹 Remote
+- **API (for Developers):** `https://learnapi-h22m.onrender.com`  
+- **Frontend (Client UI):** `https://learnapi-h22m.onrender.com`  
 
 ---
 
