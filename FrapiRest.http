@@ -1,6 +1,0 @@
-@FrapiRest_HostAddress = http://localhost:5108
-
-GET {{FrapiRest_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
