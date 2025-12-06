@@ -4,9 +4,9 @@ public static class UserEndpoint
     public static void MapUserEndpoints(this WebApplication app)
     {
         #region GetAll
-        app.MapGet("/api/users", async ([FromServices] IUserRepository repository) =>
+        app.MapGet("/api/users", async ([FromServices] IUserService service) =>
         {
-            var users = await repository.GetAllAsync();
+            var users = await service.GetAll();
             return Results.Ok(users);
         })
         .WithSummary("List all users")
@@ -14,9 +14,9 @@ public static class UserEndpoint
         #endregion
 
         #region GetById
-        app.MapGet("/api/users/{id}", async ([FromServices] IUserRepository repository, Guid id) =>
+        app.MapGet("/api/users/{id}", async ([FromServices] IUserService service, Guid id) =>
         {
-            var user = await repository.GetByIdAsync(id);
+            var user = await service.GetById(id);
             return user is null ? Results.NotFound("User not found") : Results.Ok(user);
         })
         .WithSummary("Get user by ID")
@@ -24,9 +24,9 @@ public static class UserEndpoint
         #endregion
 
         #region GetByName
-        app.MapGet("/api/users/search", async ([FromServices] IUserRepository repository, string name) =>
+        app.MapGet("/api/users/search", async ([FromServices] IUserService service, string name) =>
         {
-            var result = await repository.GetByNameAsync(name);
+            var result = await service.GetByName(name);
             return Results.Ok(result);
         })
         .WithSummary("Search users by first name")
@@ -34,14 +34,9 @@ public static class UserEndpoint
         #endregion
 
         #region Create
-        app.MapPost("/api/users", async ([FromServices] IUserRepository repository, CreateUserDto userDto) =>
+        app.MapPost("/api/users", async ([FromServices] IUserService service, CreateUserDto userDto) =>
         {
-            var model = new UserEntity(
-                userDto.FirstName,
-                userDto.LastName,
-                userDto.Email
-            );
-            var created = await repository.CreateAsync(model);
+            var created = await service.Create(userDto);
             return Results.Created($"/api/users/{created.Id}", created);
         })
         .WithSummary("Create a new user")
@@ -49,29 +44,24 @@ public static class UserEndpoint
         #endregion
 
         #region Update
-        app.MapPut("/api/users", async ([FromServices] IUserRepository repository, UpdateUserDto userDto) =>
+        app.MapPut("/api/users", async ([FromServices] IUserService service, UpdateUserDto userDto) =>
         {
-            var existing = await repository.GetByIdAsync(userDto.Id);
-            if (existing is null)
-                return Results.NotFound("User not found");
-
-            existing.Update(userDto.FirstName, userDto.LastName, userDto.Email);
-
-            var updated = await repository.UpdateAsync(existing);
-            return updated ? Results.Ok(existing) : Results.NotFound("User not found");
+            var updated = await service.Update(userDto);
+            return updated ? Results.Ok(userDto) : Results.NotFound("User not found");
         })
         .WithSummary("Edit user data")
         .WithTags("Users.Write");
         #endregion
 
         #region Delete
-        app.MapDelete("/api/users/{id}", async ([FromServices] IUserRepository repository, Guid id) =>
+        app.MapDelete("/api/users/{id}", async ([FromServices] IUserService service, Guid id) =>
         {
-            var deleted = await repository.DeleteAsync(id);
+            var deleted = await service.Delete(id);
             return deleted ? Results.NoContent() : Results.NotFound("User not found");
         })
         .WithSummary("Delete user by ID")
         .WithTags("Users.Write");
         #endregion
+
     }
 }
