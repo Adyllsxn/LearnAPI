@@ -2,4 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/api/LearnAPI/LearnAPI.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LearnAPI.Tests/LearnAPI.Tests.csproj" />
+  </Folder>
 </Solution>
