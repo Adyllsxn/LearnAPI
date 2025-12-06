@@ -16,5 +16,4 @@ global using LearnAPI.Source.Core.Application.Modules;
 global using LearnAPI.Source.Core.Application.DTOs;
 global using LearnAPI.Source.Core.Application.Services;
 global using LearnAPI.Source.Core.Presenation.Endpoints;
-global using LearnAPI.Source.Core.Presenation.Request;
 
