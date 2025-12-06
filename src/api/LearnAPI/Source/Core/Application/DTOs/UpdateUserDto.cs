@@ -1,6 +1,8 @@
-namespace LearnAPI.Source.Core.Presenation.DTOs;
-public class CreateUserDto
+namespace LearnAPI.Source.Core.Application.DTOs;
+public class UpdateUserDto
 {
+    public Guid Id { get; set; } = Guid.NewGuid();
+
     [Required(ErrorMessage = "First name is required")]
     [StringLength(50, ErrorMessage = "First name can't be longer than 50 characters")]
     public string FirstName { get; set; } = string.Empty;
