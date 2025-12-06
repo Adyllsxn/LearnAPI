@@ -39,7 +39,12 @@ The goal is to practice **clean architecture**, explore modern backend patterns,
 
 ### 🔹 Remote
 - **API (for Developers):** [https://learnapi-h22m.onrender.com](https://learnapi-h22m.onrender.com)  
-- **Frontend (Client UI):** [https://learnapi-h22m.onrender.com](https://learnapi0.vercel.app/)  
+- **Frontend (Client UI):** [https://learnap1.vercel.app/](https://learnap1.vercel.app/)  
+
+---
+
+## 📸 Demo
+![Demo](./assets/demo.png "Visual Demo")
 
 ---
 
