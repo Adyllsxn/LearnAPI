@@ -44,7 +44,7 @@ The goal is to practice **clean architecture**, explore modern backend patterns,
 ---
 
 ## 📸 Demo
-![Demo](./assets/demo.png "Visual Demo")
+![Demo](./assets/LearnAPI.png "Visual Demo")
 
 ---
 
